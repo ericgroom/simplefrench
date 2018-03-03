@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="tip-detail my-3 mx-5">
-    <button class="btn btn-primary float-right m-3">Edit</button>
+    <a class="btn btn-primary float-right m-3" href="{% url 'tips:update' tip.pk %}">Edit</a>
     <h1 class="display-3">{{ tip.title }}</h1>
     <p>{{ tip.content }}</p>
 </div>
