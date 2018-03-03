@@ -1,0 +1,5 @@
+[run]
+include = simple_french/*
+omit = *migrations*, *tests*
+plugins =
+    django_coverage_plugin
