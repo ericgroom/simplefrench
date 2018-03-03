@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>This is the tips feed.</h1>
+<ul>
+{% for tip in tips %}
+    <li>{{ tip.title}} -- {{ tip.author }} </li>
+{% endfor %}
+</ul>
+{% endblock %}
