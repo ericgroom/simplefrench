@@ -1,9 +1,11 @@
 from django.shortcuts import render
+from django.views.generic import ListView, DetailView
 from .models import Tip
 
 # Create your views here.
-def index(request):
-    context = {
-        'tips': Tip.objects.all()
-    }
-    return render(request, 'tips/feed.html', context=context)
+class TipListView(ListView):
+    model = Tip
+    context_object_name = 'tips'
+
+class TipDetailView(DetailView):
+    model = Tip

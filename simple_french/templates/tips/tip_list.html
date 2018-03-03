@@ -1,12 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>This is the tips feed.</h1>
 <div class="tips">
 {% for tip in tips %}
     <div class="card my-3">
         <div class="card-body">
-            <h1 class="card-title">{{ tip.title }}</h1>
+            <a href="{% url 'tips:detail' tip.id %}">
+                <h1 class="card-title">{{ tip.title }}</h1>
+            </a>
             <p class="card-text">{{ tip.content }}</p>
             <h6 class="card-subtitle text-muted blockquote-footer">{{ tip.author }}</h2>
         </div>
