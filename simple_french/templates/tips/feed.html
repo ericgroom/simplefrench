@@ -2,9 +2,15 @@
 
 {% block content %}
 <h1>This is the tips feed.</h1>
-<ul>
+<div class="tips">
 {% for tip in tips %}
-    <li>{{ tip.title}} -- {{ tip.author }} </li>
+    <div class="card my-3">
+        <div class="card-body">
+            <h1 class="card-title">{{ tip.title }}</h1>
+            <p class="card-text">{{ tip.content }}</p>
+            <h6 class="card-subtitle text-muted blockquote-footer">{{ tip.author }}</h2>
+        </div>
+    </div>
 {% endfor %}
-</ul>
+</div>
 {% endblock %}
