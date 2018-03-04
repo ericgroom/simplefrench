@@ -8,7 +8,7 @@ class TipListView(ListView):
     model = Tip
     context_object_name = 'tips'
 
-class TipDetailView(DetailView, DeleteView):
+class TipDetailView(DetailView):
     model = Tip
 
 class TipUpdateView(LoginRequiredMixin, UpdateView):
