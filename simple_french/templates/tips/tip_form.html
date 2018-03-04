@@ -8,6 +8,7 @@
         {{ form|crispy }}
         <div class="control-group">
             <div class="controls">
+                <a class="btn btn-outline-danger" href="{% url 'tips:detail' tip.pk%}">Cancel</a>
                 <button type="submit" class="btn btn-success">Save</button>
             </div>
         </div>
