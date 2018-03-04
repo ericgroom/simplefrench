@@ -57,6 +57,7 @@ LOCAL_APPS = [
     'simple_french.users.apps.UsersConfig',
     # Your stuff: custom apps go here
     'simple_french.tips.apps.TipsConfig',
+    'simple_french.guide.apps.GuideConfig',
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
