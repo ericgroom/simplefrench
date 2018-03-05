@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="tip-detail my-3 mx-5">
+<div class="tip-detail my-3">
     {% if request.user == tip.author %}
     <a class="btn btn-primary float-right m-3" href="{% url 'tips:update' tip.pk %}">Edit</a>
     {% endif %}
