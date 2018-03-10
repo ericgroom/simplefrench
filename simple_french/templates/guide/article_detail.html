@@ -2,5 +2,5 @@
 
 {% block content %}
 <h1 class="display-1">{{ article.title }}</h1>
-<p>{{ article.body|safe }}</p>
+<p>{{ article.html|safe }}</p>
 {% endblock content %}

@@ -1,4 +1,6 @@
 from django.db import models
+from django.urls import reverse
+import markdown
 
 # Create your models here.
 class Article(models.Model):
@@ -16,3 +18,10 @@ class Article(models.Model):
     
     def children(self):
         return Article.objects.filter(parent=self)
+
+    @property
+    def html(self):
+        return markdown.markdown(self.body)
+
+    def get_absolute_url(self):
+        return reverse('guide:detail', kwargs={'pk': self.pk})
