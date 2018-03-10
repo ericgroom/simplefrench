@@ -5,6 +5,7 @@ import markdown
 # Create your models here.
 class Article(models.Model):
     title = models.CharField(max_length=255)
+    slug = models.SlugField(max_length=50, unique=True)
     body = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
     parent = models.ForeignKey('guide.Article', null=True, blank=True, default=None, on_delete=models.CASCADE)
