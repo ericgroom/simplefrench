@@ -1,0 +1,10 @@
+{% load get_value %}
+
+<li class="nav-item">
+    <a href="{% url 'guide:detail' node.article.slug %}" class="nav-link {% if active == node.article.title %}active{% endif %}">{{ node.article.title }}</a>
+    <ul class="nav flex-column pl-4">
+        {% for child in node|get:'children' %}
+            {% include 'guide/toc_node.html' with node=child %}
+        {% endfor %}
+    </ul>
+</li>

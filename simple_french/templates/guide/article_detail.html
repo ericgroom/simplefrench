@@ -1,6 +1,19 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% load table_of_contents %} {% block content %}
 
-{% block content %}
-<h1 class="display-1">{{ article.title }}</h1>
-<p>{{ article.html|safe }}</p>
-{% endblock content %}
+<div class="row">
+  <div class="col-xs-2">
+    {% table_of_contents article.toc_node %}
+  </div>
+  <div class="col">
+    <nav aria-label="breadcrumb" class="mt-2">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="{% url 'guide:list' %}">Table of Contents</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">{{ article.title }}</li>
+            </ol>
+        </nav>
+    <p class="display-1">{{ article.title }}</p>
+    <p>{{ article.html|safe }}</p>
+  </div>
+  {% endblock content %}

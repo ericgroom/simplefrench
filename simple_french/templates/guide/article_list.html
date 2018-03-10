@@ -1,18 +1,6 @@
 {% extends "base.html" %}
+{% load table_of_contents %}
 
 {% block content %}
-<ul>
-{% for article in object_list %}
-    {% if article.is_root %}
-        <li><a href="{% url 'guide:detail' article.slug %}">{{ article.title }}</a></li>
-        {% if article.children %}
-            <ul>
-                {% for child in article.children %}
-                    <li><a href="{% url 'guide:detail' child.slug %}">{{ child.title }}</a></li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-    {% endif %}
-{% endfor %}
-</ul>
+    {% table_of_contents root %}
 {% endblock content %}
