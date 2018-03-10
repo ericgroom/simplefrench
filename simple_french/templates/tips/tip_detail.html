@@ -2,10 +2,13 @@
 
 {% block content %}
 <div class="tip-detail my-3">
-    {% if request.user == tip.author %}
-    <a class="btn btn-primary float-right m-3" href="{% url 'tips:update' tip.pk %}">Edit</a>
-    {% endif %}
-    <h1 class="display-3">{{ tip.title }}</h1>
+    <div class="d-flex align-items-center">
+        <h1 class="display-3 d-inline-block mr-auto">{{ tip.title }}</h1>
+        {% if request.user == tip.author %}
+        <a class="btn btn-primary m-1" href="{% url 'tips:update' tip.pk %}" role="button">Edit</a>
+        <a class="btn btn-danger m-1" href="{% url 'tips:delete' tip.pk %}" role="button">Delete</a>
+        {% endif %}
+    </div>
     <p>{{ tip.content }}</p>
 </div>
 

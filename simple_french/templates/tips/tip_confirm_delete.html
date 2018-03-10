@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    <p>Are you sure you want to delete {{ tip.title }}?</p>
+    <a href="{% url 'tips:detail' tip.pk %}" class="btn btn-primary m-1" role="button">Cancel</a>
+    <button type="submit" class="btn btn-danger m-1">Delete</button>
+</form>
+{% endblock content %}

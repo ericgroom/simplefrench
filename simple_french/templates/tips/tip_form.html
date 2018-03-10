@@ -2,15 +2,19 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-    <h1>{{ tip.title }}</h1>
-    <form action="{% url 'tips:update' tip.pk %}" method="post">
-        {% csrf_token %}
-        {{ form|crispy }}
-        <div class="control-group">
-            <div class="controls">
-                <a class="btn btn-outline-danger" href="{% url 'tips:detail' tip.pk%}">Cancel</a>
-                <button type="submit" class="btn btn-success">Save</button>
-            </div>
+    <div id="tip-form">
+        <div class="d-flex align-items-center">
+            <h1>{{ tip.title }}</h1>
         </div>
-    </form>
+        <form action="{% url 'tips:update' tip.pk %}" method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <div class="control-group align-top d-inline-block">
+                <div class="controls">
+                    <a class="btn btn-outline-danger m-1" href="{% url 'tips:detail' tip.pk%}" role="button">Cancel</a>
+                    <button type="submit" class="btn btn-success m-1">Save</button>
+                </div>
+            </div>
+        </form>
+    </div>
 {% endblock content %}
